@@ -1,0 +1,10 @@
+## Interface: 30100
+## Version: 1.0.0
+## Title: BadBoy_CCleaner
+## Notes: Filter crap from your chat.
+## Author: Funkydude
+## Dependencies: BadBoy
+## X-Category: Chat/Communication
+## X-License: All Rights Reserved
+
+BadBoy_CCleaner.lua
