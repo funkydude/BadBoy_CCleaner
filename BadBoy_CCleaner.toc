@@ -1,5 +1,5 @@
 ## Interface: 30100
-## Version: 1.0.0
+## Version: 2.0.0
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Author: Funkydude
