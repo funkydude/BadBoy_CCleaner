@@ -8,6 +8,8 @@ local triggers = {
 	"rectum.*%[.*%]",
 	"%[.*%].*anal",
 	"anal.*%[.*%]",
+	"%[.*%].*in.*bed",
+	"in.*bed.*%[.*%]",
 }
 
 local oldmsg, savedID, result = "", 0, nil
@@ -23,6 +25,7 @@ ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", function(_,_,msg,_,_,_,_,_,c
 			return true --found a trigger, filter
 		end
 	end
+	--Anti-macro system
 	msg = rep(msg, "%A", "") --Remove non-letters after blacklist scan, need brackets for that
 	if msg == oldmsg then
 		result = true
