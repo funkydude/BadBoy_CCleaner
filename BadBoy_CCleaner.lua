@@ -12,6 +12,8 @@ local triggers = {
 	"in.*bed.*%[.*%]",
 	"%[willy%].*%[.*%]",
 	"%[.*%].*%[willy%]",
+	"vaginal.*%[.*%]",
+	"%[.*%].*atthegaybar",
 }
 
 local oldmsg, savedID, result = "", 0, nil

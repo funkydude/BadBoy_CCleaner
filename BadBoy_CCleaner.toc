@@ -1,5 +1,5 @@
-## Interface: 30100
-## Version: 2.1.2
+## Interface: 30200
+## Version: 2.1.3
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Author: Funkydude
@@ -8,3 +8,4 @@
 ## X-License: All Rights Reserved
 
 BadBoy_CCleaner.lua
+
