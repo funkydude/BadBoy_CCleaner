@@ -1,17 +1,16 @@
 
 local triggers = {
-	"%[.*%].*rectum",
-	"rectum.*%[.*%]",
-	"%[.*%].*anal",
-	"anal.*%[.*%]",
-	"%[.*%].*in.*bed",
-	"in.*bed.*%[.*%]",
-	"%[willy%].*%[.*%]",
-	"%[.*%].*%[willy%]",
-	"vaginal.*%[.*%]",
-	"%[.*%].*atthegaybar",
+	"rape",
+	"rectum",
+	"anal",
+	"inbed",
+	"%[willy%]",
+	"%[turd%]",
+	"vaginal",
+	"atthegaybar",
 	"harry.*potter.*%[.*%]",
 	"chucknorris",
+	"murloc",
 	"|cffff8000", --legendary color
 }
 
