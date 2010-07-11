@@ -1,5 +1,6 @@
 
 local triggers = {
+	"inmypants",
 	"rape",
 	"rectum",
 	"anal",
