@@ -5,7 +5,7 @@
 ## Notes-frFR: Filtre de la connerie dans votre chat.
 ## Author: Funkydude
 ## Dependencies: BadBoy
-# SavedVariables: BADBOY_CCLEANER, BADBOY_NOICONS
+## SavedVariables: BADBOY_CCLEANER, BADBOY_NOICONS
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
 
