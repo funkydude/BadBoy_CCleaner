@@ -71,6 +71,7 @@ do
 	ccleanerInput:SetScript("OnTextChanged", function(_, changed)
 		if changed then
 			local msg = (BadBoyCCleanerInput:GetText()):lower()
+			msg = (msg):gsub("[%(%)%.%%%+%-%*%?%[%^%$%]]", "")
 			BadBoyCCleanerInput:SetText(msg)
 		end
 	end)
