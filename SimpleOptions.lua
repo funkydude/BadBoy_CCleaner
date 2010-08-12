@@ -79,6 +79,7 @@ do
 	ccleanerButton:SetScript("OnClick", function(frame)
 		BadBoyCCleanerInput:ClearFocus()
 		local t = BadBoyCCleanerInput:GetText()
+		if t == "" or t:find("^ *$") then BadBoyCCleanerInput:SetText("") return end
 		local found
 		for i=1, #BADBOY_CCLEANER do
 			if BADBOY_CCLEANER[i] == t then found = i end
