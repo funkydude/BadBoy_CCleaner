@@ -1,12 +1,14 @@
 ## Interface: 30300
-## Version: 2.3.1
+## Version: 3.00
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Filtre de la connerie dans votre chat.
 ## Author: Funkydude
 ## Dependencies: BadBoy
+# SavedVariables: BADBOY_CCLEANER, BADBOY_NOICONS
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved
 
+SimpleOptions.lua
 BadBoy_CCleaner.lua
 
