@@ -18,6 +18,7 @@ do
 			end
 		end
 		BadBoyCCleanerEditBox:SetText(text)
+		BadBoyCCleanerNoIconButton:SetChecked(BADBOY_NOICONS)
 		frame:SetScript("OnEvent", nil)
 		frame:UnregisterEvent("PLAYER_LOGIN")
 	end)
@@ -28,13 +29,6 @@ do
 	ccleanerNoIcons:SetWidth(26)
 	ccleanerNoIcons:SetHeight(26)
 	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyLevelsEditBox, "BOTTOMLEFT", -10, -20)
-	ccleanerNoIcons:SetScript("OnShow", function(frame)
-		if BADBOY_NOICONS then
-			frame:SetChecked(true)
-		else
-			frame:SetChecked(false)
-		end
-	end)
 	ccleanerNoIcons:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
@@ -84,7 +78,7 @@ do
 	ccleanerButton:SetText(ADD.."/"..REMOVE)
 	ccleanerButton:SetScript("OnClick", function(frame)
 		BadBoyCCleanerInput:ClearFocus()
-		--[[local t = BadBoyCCleanerInput:GetText()
+		local t = BadBoyCCleanerInput:GetText()
 		local found
 		for i=1, #BADBOY_CCLEANER do
 			if BADBOY_CCLEANER[i] == t then found = i end
@@ -102,7 +96,7 @@ do
 				text = text.."\n"..BADBOY_CCLEANER[i]
 			end
 		end
-		BadBoyCCleanerEditBox:SetText(text)]]
+		BadBoyCCleanerEditBox:SetText(text)
 		BadBoyCCleanerInput:SetText("")
 	end)
 	ccleanerInput:SetScript("OnEnterPressed", function() BadBoyCCleanerButton:Click() end)
