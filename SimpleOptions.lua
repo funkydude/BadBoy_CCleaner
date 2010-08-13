@@ -1,29 +1,6 @@
 
 do
-	BadBoyConfig:RegisterEvent("PLAYER_LOGIN")
-	BadBoyConfig:SetScript("OnEvent", function(frame)
-		if type(BADBOY_CCLEANER) ~= "table" then
-			BADBOY_CCLEANER = {
-				"rape",
-				"anal",
-				"murloc",
-			}
-		end
-		local text
-		for i=1, #BADBOY_CCLEANER do
-			if not text then
-				text = BADBOY_CCLEANER[i]
-			else
-				text = text.."\n"..BADBOY_CCLEANER[i]
-			end
-		end
-		BadBoyCCleanerEditBox:SetText(text)
-		BadBoyCCleanerNoIconButton:SetChecked(BADBOY_NOICONS)
-		frame:SetScript("OnEvent", nil)
-		frame:UnregisterEvent("PLAYER_LOGIN")
-	end)
-
-	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@")
+	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@") --wowace magic, replaced with tag version
 
 	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig)
 	ccleanerNoIcons:SetWidth(26)
