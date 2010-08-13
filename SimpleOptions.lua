@@ -49,7 +49,7 @@ do
 
 	local noIconsMsgText = ccleanerNoIcons:CreateFontString("BadBoyCCleanerNoIconButtonTitle", "ARTWORK", "GameFontHighlight")
 	noIconsMsgText:SetPoint("LEFT", ccleanerNoIcons, "RIGHT", 0, 1)
-	noIconsMsgText:SetText("Replace Raid Icons")
+	noIconsMsgText:SetText(BINDING_NAME_RAIDTARGETNONE)
 
 	local ccleanerInput = CreateFrame("EditBox", "BadBoyCCleanerInput", BadBoyConfig, "InputBoxTemplate")
 	ccleanerInput:SetPoint("TOPLEFT", ccleanerNoIcons, "BOTTOMLEFT", 10, -5)
