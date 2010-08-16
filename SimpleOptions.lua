@@ -5,7 +5,7 @@ do
 	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig)
 	ccleanerNoIcons:SetWidth(26)
 	ccleanerNoIcons:SetHeight(26)
-	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyLevelsEditBox, "BOTTOMLEFT", -10, -20)
+	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigNoArtButton, "BOTTOMLEFT", 0, -65)
 	ccleanerNoIcons:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
@@ -49,7 +49,7 @@ do
 	ccleanerInput:Show()
 
 	local ccleanerButton = CreateFrame("Button", "BadBoyCCleanerButton", ccleanerInput, "UIPanelButtonTemplate")
-	ccleanerButton:SetWidth(90)
+	ccleanerButton:SetWidth(110)
 	ccleanerButton:SetHeight(20)
 	ccleanerButton:SetPoint("LEFT", ccleanerInput, "RIGHT")
 	ccleanerButton:SetText(ADD.."/"..REMOVE)
@@ -57,6 +57,8 @@ do
 		BadBoyCCleanerInput:ClearFocus()
 		local t = BadBoyCCleanerInput:GetText()
 		if t == "" or t:find("^ *$") then BadBoyCCleanerInput:SetText("") return end
+		t = (t):lower()
+		t = (t):gsub("[%(%)%.%%%+%-%*%?%[%^%$%]]", "")
 		local found
 		for i=1, #BADBOY_CCLEANER do
 			if BADBOY_CCLEANER[i] == t then found = i end
@@ -74,7 +76,7 @@ do
 				text = text.."\n"..BADBOY_CCLEANER[i]
 			end
 		end
-		BadBoyCCleanerEditBox:SetText(text)
+		BadBoyCCleanerEditBox:SetText(text or "")
 		BadBoyCCleanerInput:SetText("")
 	end)
 	ccleanerInput:SetScript("OnEnterPressed", function() BadBoyCCleanerButton:Click() end)

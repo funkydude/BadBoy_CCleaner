@@ -30,14 +30,14 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			text = text.."\n"..BADBOY_CCLEANER[i]
 		end
 	end
-	BadBoyCCleanerEditBox:SetText(text)
+	BadBoyCCleanerEditBox:SetText(text or "")
 	BadBoyCCleanerNoIconButton:SetChecked(BADBOY_NOICONS)
 
 	--main filtering function
 	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", function(_,_,msg,player,...)
 		local chanid, found, modify = select(5, ...), 0, nil
 		if chanid == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not _G.CanComplainChat(player) then return end --Don't filter ourself
+		if not CanComplainChat(player) then return end --Don't filter ourself
 		msg = (msg):lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
 			if msg:find(BADBOY_CCLEANER[i]) then
