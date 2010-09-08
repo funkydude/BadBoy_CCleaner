@@ -17,11 +17,13 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
 	if type(BADBOY_CCLEANER) ~= "table" then
 		BADBOY_CCLEANER = {
-			"rape",
 			"anal",
+			"dirge",
 			"murloc",
+			"rape",
 		}
 	end
+	table.sort(BADBOY_CCLEANER)
 	local text
 	for i=1, #BADBOY_CCLEANER do
 		if not text then

@@ -1,5 +1,5 @@
 ## Interface: 30300
-## Version: 3.05
+## Version: 3.10
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Filtre de la connerie dans votre chat.

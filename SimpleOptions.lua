@@ -68,6 +68,7 @@ do
 		else
 			tinsert(BADBOY_CCLEANER, t)
 		end
+		table.sort(BADBOY_CCLEANER)
 		local text
 		for i=1, #BADBOY_CCLEANER do
 			if not text then
