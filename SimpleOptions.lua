@@ -5,7 +5,7 @@ do
 	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig)
 	ccleanerNoIcons:SetWidth(26)
 	ccleanerNoIcons:SetHeight(26)
-	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigNoArtButton, "BOTTOMLEFT", 0, -65)
+	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -65)
 	ccleanerNoIcons:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
