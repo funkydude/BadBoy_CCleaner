@@ -36,13 +36,14 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	BadBoyCCleanerNoIconButton:SetChecked(BADBOY_NOICONS)
 
 	--main filtering function
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", function(_,_,msg,player,...)
+	local filter = function(_,event,msg,player,...)
 		local chanid, found, modify = select(5, ...), 0, nil
-		if chanid == 0 then result = nil return end --Only scan official custom channels (gen/trade)
-		if not CanComplainChat(player) then return end --Don't filter ourself
+		if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
+		if not CanComplainChat(lineId) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
 		msg = (msg):lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
 			if msg:find(BADBOY_CCLEANER[i]) then
+				if BadBoyLogger then BadBoyLogger("CCleaner", msg) end
 				return true --found a trigger, filter
 			end
 		end
@@ -55,7 +56,9 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 				return false, msg, player, ...
 			end
 		end
-	end)
+	end
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", filter)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", filter)
 
 	frame:SetScript("OnEvent", nil)
 	frame:UnregisterEvent("ADDON_LOADED")
