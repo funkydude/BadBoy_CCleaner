@@ -43,7 +43,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		msg = (msg):lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
 			if msg:find(BADBOY_CCLEANER[i]) then
-				if BadBoyLogger then BadBoyLogger("CCleaner", msg) end
+				if BadBoyLogger then BadBoyLogger("CCleaner", event, player, msg) end
 				return true --found a trigger, filter
 			end
 		end
