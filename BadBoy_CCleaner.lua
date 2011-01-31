@@ -40,6 +40,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		local chanid, found, modify = select(5, ...), 0, nil
 		if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
 		if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
+		local orig = msg
 		msg = (msg):lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
 			if msg:find(BADBOY_CCLEANER[i]) then
@@ -49,11 +50,11 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		end
 		if BADBOY_NOICONS then
 			for i = 1, 10 do
-				msg, found = replace(msg, knownIcons[i], "")
+				orig, found = replace(orig, knownIcons[i], "")
 				if found > 0 then modify = true end --Set to true if we remove a raid icon from this message
 			end
 			if modify then --only modify message if we removed an icon
-				return false, msg, player, ...
+				return false, orig, player, ...
 			end
 		end
 	end

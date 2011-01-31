@@ -1,5 +1,5 @@
 ## Interface: 40000
-## Version: 3.20
+## Version: 3.25
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Filtre de la connerie dans votre chat.
