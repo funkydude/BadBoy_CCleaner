@@ -2,9 +2,7 @@
 do
 	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@") --wowace magic, replaced with tag version
 
-	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig)
-	ccleanerNoIcons:SetWidth(26)
-	ccleanerNoIcons:SetHeight(26)
+	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig, "OptionsBaseCheckButtonTemplate")
 	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -65)
 	ccleanerNoIcons:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
@@ -16,13 +14,6 @@ do
 			BADBOY_NOICONS = nil
 		end
 	end)
-
-	ccleanerNoIcons:SetHitRectInsets(0, -200, 0, 0)
-
-	ccleanerNoIcons:SetNormalTexture("Interface\\Buttons\\UI-CheckBox-Up")
-	ccleanerNoIcons:SetPushedTexture("Interface\\Buttons\\UI-CheckBox-Down")
-	ccleanerNoIcons:SetHighlightTexture("Interface\\Buttons\\UI-CheckBox-Highlight")
-	ccleanerNoIcons:SetCheckedTexture("Interface\\Buttons\\UI-CheckBox-Check")
 
 	local noIconsMsgText = ccleanerNoIcons:CreateFontString("BadBoyCCleanerNoIconButtonTitle", "ARTWORK", "GameFontHighlight")
 	noIconsMsgText:SetPoint("LEFT", ccleanerNoIcons, "RIGHT", 0, 1)
