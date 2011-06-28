@@ -1,5 +1,5 @@
-## Interface: 40100
-## Version: 3.26
+## Interface: 40200
+## Version: 3.27
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Enlève toutes les saloperies de votre fenêtre de discussion.
