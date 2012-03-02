@@ -1,25 +1,16 @@
 
 local knownIcons = { --list of all known raid icon chat shortcuts
-	"{rt%d}",
-	"{RT%d}",
-	"{x}",
-	"{X}",
-	"{"..(RAID_TARGET_1):lower().."}",
-	"{"..(RAID_TARGET_2):lower().."}",
-	"{"..(RAID_TARGET_3):lower().."}",
-	"{"..(RAID_TARGET_4):lower().."}",
-	"{"..(RAID_TARGET_5):lower().."}",
-	"{"..(RAID_TARGET_6):lower().."}",
-	"{"..(RAID_TARGET_7):lower().."}",
-	"{"..(RAID_TARGET_8):lower().."}",
-	"{"..(RAID_TARGET_1):upper().."}",
-	"{"..(RAID_TARGET_2):upper().."}",
-	"{"..(RAID_TARGET_3):upper().."}",
-	"{"..(RAID_TARGET_4):upper().."}",
-	"{"..(RAID_TARGET_5):upper().."}",
-	"{"..(RAID_TARGET_6):upper().."}",
-	"{"..(RAID_TARGET_7):upper().."}",
-	"{"..(RAID_TARGET_8):upper().."}",
+	"{[Rr][Tt]%d}",
+	"{[Xx]}",
+	"{[Ss][Tt][Aa][Rr]}",
+	"{[Cc][Ii][Rr][Cc][Ll][Ee]}",
+	"{[Dd][Ii][Aa][Mm][Oo][Nn][Dd]}",
+	"{[Tt][Rr][Ii][Aa][Nn][Gg][Ll][Ee]}",
+	"{[Mm][Oo][Oo][Nn]}",
+	"{[Ss][Qq][Uu][Aa][Rr][Ee]}",
+	"{[Cc][Rr][Oo][Ss][Ss]}",
+	"{[Ss][Kk][Uu][Ll][Ll]}",
+	-- Feel free to add translated icons
 }
 local replace = string.gsub
 BadBoyConfig:RegisterEvent("ADDON_LOADED")
