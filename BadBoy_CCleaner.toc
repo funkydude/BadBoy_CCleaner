@@ -5,6 +5,7 @@
 ## Notes-frFR: Enlève toutes les saloperies de votre fenêtre de discussion.
 ## Notes-zhCN: 过滤聊天窗口的废话....
 ## Notes-zhTW: 過濾聊天窗口的廢話....
+## Notes-deDE: Unsinniges aus Deinem Chat herausfiltern.
 ## Author: Funkydude
 ## Dependencies: BadBoy
 ## SavedVariables: BADBOY_CCLEANER, BADBOY_NOICONS

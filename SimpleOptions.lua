@@ -17,7 +17,30 @@ do
 
 	local noIconsMsgText = ccleanerNoIcons:CreateFontString("BadBoyCCleanerNoIconButtonTitle", "ARTWORK", "GameFontHighlight")
 	noIconsMsgText:SetPoint("LEFT", ccleanerNoIcons, "RIGHT", 0, 1)
-	noIconsMsgText:SetText(BINDING_NAME_RAIDTARGETNONE)
+
+	noIconsMsgText:SetText("Remove raid icons from public chat")
+	local L = GetLocale()
+	if L == "frFR" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "deDE" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "zhTW" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "zhCN" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "esES" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "esMX" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "ruRU" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "koKR" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "ptBR" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	elseif L == "itIT" then
+		noIconsMsgText:SetText("Remove raid icons from public chat")
+	end
 
 	local ccleanerInput = CreateFrame("EditBox", "BadBoyCCleanerInput", BadBoyConfig, "InputBoxTemplate")
 	ccleanerInput:SetPoint("TOPLEFT", ccleanerNoIcons, "BOTTOMLEFT", 10, -5)
