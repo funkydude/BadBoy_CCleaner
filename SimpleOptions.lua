@@ -3,7 +3,7 @@ do
 	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@") --wowace magic, replaced with tag version
 
 	local ccleanerNoIcons = CreateFrame("CheckButton", "BadBoyCCleanerNoIconButton", BadBoyConfig, "OptionsBaseCheckButtonTemplate")
-	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -113)
+	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -135)
 	ccleanerNoIcons:SetScript("OnClick", function(frame)
 		local tick = frame:GetChecked()
 		if tick then
