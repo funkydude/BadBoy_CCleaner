@@ -21,7 +21,7 @@ do
 	noIconsMsgText:SetText("Remove raid icons from public chat")
 	local L = GetLocale()
 	if L == "frFR" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		noIconsMsgText:SetText("Enlever les icônes de raid des discussions publiques")
 	elseif L == "deDE" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "zhTW" then
