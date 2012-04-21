@@ -1,6 +1,6 @@
 
 local knownIcons = { --list of all known raid icon chat shortcuts
-	"{[Rr][Tt]%d}",
+	"{%a%a%d}",
 	"{[Xx]}",
 	"{[Ss][Tt][Aa][Rr]}",
 	"{[Cc][Ii][Rr][Cc][Ll][Ee]}",
