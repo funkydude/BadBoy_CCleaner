@@ -10,6 +10,15 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	"{[Ss][Qq][Uu][Aa][Rr][Ee]}",
 	"{[Cc][Rr][Oo][Ss][Ss]}",
 	"{[Ss][Kk][Uu][Ll][Ll]}",
+	--deDE
+	"{[Ss][Tt][Ee][Rr][Nn]}",
+	"{[Kk][Rr][Ee][Ii][Ss]}",
+	"{[Dd][Ii][Aa][Mm][Aa][Nn][Tt]}",
+	"{[Dd][Rr][Ee][Ii][Ee][Cc][Kk]}",
+	"{[Mm][Oo][Nn][Dd]}",
+	"{[Vv][Ii][Ee][Rr][Ee][Cc][Kk]}",
+	"{[Kk][Rr][Ee][Uu][Zz]}",
+	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää][Dd][Ee][Ll]}",
 	-- Feel free to add translated icons
 }
 local replace = string.gsub
