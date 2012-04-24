@@ -21,7 +21,7 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää]+[Dd][Ee][Ll]}",
 	-- Feel free to add translated icons
 }
-local replace = string.gsub
+local gsub = string.gsub
 BadBoyConfig:RegisterEvent("ADDON_LOADED")
 BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
@@ -60,7 +60,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		if BADBOY_NOICONS then
 			local modify
 			for i = 1, #knownIcons do
-				msg, found = replace(msg, knownIcons[i], "")
+				msg, found = gsub(msg, knownIcons[i], "")
 				if found > 0 then modify = true end --Set to true if we remove a raid icon from this message
 			end
 			if modify then --only modify message if we removed an icon
