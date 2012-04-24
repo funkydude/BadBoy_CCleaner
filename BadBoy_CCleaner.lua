@@ -18,7 +18,7 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	"{[Mm][Oo][Nn][Dd]}",
 	"{[Vv][Ii][Ee][Rr][Ee][Cc][Kk]}",
 	"{[Kk][Rr][Ee][Uu][Zz]}",
-	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää][Dd][Ee][Ll]}",
+	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää]+[Dd][Ee][Ll]}",
 	-- Feel free to add translated icons
 }
 local replace = string.gsub
@@ -47,7 +47,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 
 	--main filtering function
 	local filter = function(_,event,msg,player,...)
-		local chanid, found, modify = select(5, ...), 0, nil
+		local chanid, found = select(5, ...), 0
 		if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
 		if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
 		local lowMsg = (msg):lower() --lower all text
@@ -58,6 +58,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			end
 		end
 		if BADBOY_NOICONS then
+			local modify
 			for i = 1, #knownIcons do
 				msg, found = replace(msg, knownIcons[i], "")
 				if found > 0 then modify = true end --Set to true if we remove a raid icon from this message
