@@ -23,7 +23,7 @@ do
 	if L == "frFR" then
 		noIconsMsgText:SetText("Enlever les icônes de raid des discussions publiques")
 	elseif L == "deDE" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		noIconsMsgText:SetText("Entferne Schlachtzugssymbole im Öffentlichen Chat")
 	elseif L == "zhTW" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "zhCN" then
