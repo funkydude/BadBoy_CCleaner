@@ -19,6 +19,15 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	"{[Vv][Ii][Ee][Rr][Ee][Cc][Kk]}",
 	"{[Kk][Rr][Ee][Uu][Zz]}",
 	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää]+[Dd][Ee][Ll]}",
+	--frFR
+	"{[Éé]+[Tt][Oo][Ii][Ll][Ee]}",
+	"{[Cc][Ee][Rr][Cc][Ll][Ee]}",
+	"{[Ll][Oo][Ss][Aa][Nn][Gg][Ee]}",
+	--"{[Tt][Rr][Ii][Aa][Nn][Gg][Ll][Ee]}",
+	"{[Ll][Uu][Nn][Ee]}",
+	"{[Cc][Aa][Rr][Rr][Éé]+}",
+	"{[Cc][Rr][Oo][Ii][Xx]}",
+	"{[Cc][Rr][Ââ]+[Nn][Ee]}",
 	-- Feel free to add translated icons
 }
 local gsub = string.gsub
@@ -50,14 +59,14 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		local chanid, found = select(5, ...), 0
 		if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
 		if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
-		local lowMsg = (msg):lower() --lower all text
+		local lowMsg = msg:lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
 			if lowMsg:find(BADBOY_CCLEANER[i]) then
 				if BadBoyLogger then BadBoyLogger("CCleaner", event, player, msg) end
 				return true --found a trigger, filter
 			end
 		end
-		if BADBOY_NOICONS then
+		if BADBOY_NOICONS and msg:find("{") then
 			local modify
 			for i = 1, #knownIcons do
 				msg, found = gsub(msg, knownIcons[i], "")
