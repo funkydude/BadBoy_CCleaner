@@ -18,19 +18,20 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	"{[Mm][Oo][Nn][Dd]}",
 	"{[Vv][Ii][Ee][Rr][Ee][Cc][Kk]}",
 	"{[Kk][Rr][Ee][Uu][Zz]}",
-	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ää]+[Dd][Ee][Ll]}",
+	"{[Tt][Oo][Tt][Ee][Nn][Ss][Cc][Hh][Ã„Ã¤]+[Dd][Ee][Ll]}",
 	--frFR
-	"{[Éé]+[Tt][Oo][Ii][Ll][Ee]}",
+	"{[Ã‰Ã©]+[Tt][Oo][Ii][Ll][Ee]}",
 	"{[Cc][Ee][Rr][Cc][Ll][Ee]}",
 	"{[Ll][Oo][Ss][Aa][Nn][Gg][Ee]}",
 	--"{[Tt][Rr][Ii][Aa][Nn][Gg][Ll][Ee]}",
 	"{[Ll][Uu][Nn][Ee]}",
-	"{[Cc][Aa][Rr][Rr][Éé]+}",
+	"{[Cc][Aa][Rr][Rr][Ã‰Ã©]+}",
 	"{[Cc][Rr][Oo][Ii][Xx]}",
-	"{[Cc][Rr][Ââ]+[Nn][Ee]}",
+	"{[Cc][Rr][Ã‚Ã¢]+[Nn][Ee]}",
 	-- Feel free to add translated icons
 }
-local gsub = string.gsub
+
+local gsub = gsub
 BadBoyConfig:RegisterEvent("ADDON_LOADED")
 BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
