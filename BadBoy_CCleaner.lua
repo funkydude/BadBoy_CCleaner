@@ -62,12 +62,12 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
 		local lowMsg = msg:lower() --lower all text
 		for i=1, #BADBOY_CCLEANER do --scan DB for matches
-			if lowMsg:find(BADBOY_CCLEANER[i]) then
+			if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
 				if BadBoyLogger then BadBoyLogger("CCleaner", event, player, msg) end
 				return true --found a trigger, filter
 			end
 		end
-		if BADBOY_NOICONS and msg:find("{") then
+		if BADBOY_NOICONS and msg:find("{", nil, true) then
 			local modify
 			for i = 1, #knownIcons do
 				msg, found = gsub(msg, knownIcons[i], "")
