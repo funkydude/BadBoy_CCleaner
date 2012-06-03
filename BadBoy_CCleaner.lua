@@ -31,7 +31,6 @@ local knownIcons = { --list of all known raid icon chat shortcuts
 	-- Feel free to add translated icons
 }
 
-local gsub = gsub
 BadBoyConfig:RegisterEvent("ADDON_LOADED")
 BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
@@ -43,6 +42,9 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			"rape",
 		}
 	end
+
+	local gsub, prevLineId, result, modify, BADBOY_CCLEANER = gsub, 0, nil, nil, BADBOY_CCLEANER
+
 	table.sort(BADBOY_CCLEANER)
 	local text
 	for i=1, #BADBOY_CCLEANER do
@@ -56,25 +58,36 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	BadBoyCCleanerNoIconButton:SetChecked(BADBOY_NOICONS)
 
 	--main filtering function
-	local filter = function(_,event,msg,player,...)
-		local chanid, found = select(5, ...), 0
-		if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
-		if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
-		local lowMsg = msg:lower() --lower all text
-		for i=1, #BADBOY_CCLEANER do --scan DB for matches
-			if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
-				if BadBoyLogger then BadBoyLogger("CCleaner", event, player, msg) end
-				return true --found a trigger, filter
+	local filter = function(_,event,msg,player,lang,chan,tar,flag,chanid,chanNum,chanName,u,lineId,...)
+		if lineId == prevLineId then
+			if modify then
+				return false,modify,player,lang,chan,tar,flag,chanid,chanNum,chanName,u,lineId,...
+			elseif result then
+				return true
+			else
+				return
 			end
-		end
-		if BADBOY_NOICONS and msg:find("{", nil, true) then
-			local modify
-			for i = 1, #knownIcons do
-				msg, found = gsub(msg, knownIcons[i], "")
-				if found > 0 then modify = true end --Set to true if we remove a raid icon from this message
+		else
+			prevLineId, modify, result = lineId, nil, nil
+			if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
+			if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
+			local lowMsg = msg:lower() --lower all text
+			for i=1, #BADBOY_CCLEANER do --scan DB for matches
+				if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
+					if BadBoyLog then BadBoyLog("CCleaner", event, player, msg) end
+					result = true
+					return true --found a trigger, filter
+				end
 			end
-			if modify then --only modify message if we removed an icon
-				return false, msg, player, ...
+			if BADBOY_NOICONS and msg:find("{", nil, true) then
+				local found = 0
+				for i = 1, #knownIcons do
+					msg, found = gsub(msg, knownIcons[i], "")
+					if found > 0 then modify = msg end --Set to true if we remove a raid icon from this message
+				end
+				if modify then --only modify message if we removed an icon
+					return false,modify,player,lang,chan,tar,flag,chanid,chanNum,chanName,u,lineId,...
+				end
 			end
 		end
 	end
