@@ -68,7 +68,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			end
 		else
 			prevLineId, modify, result = lineId, nil, nil
-			if event == "CHAT_MSG_CHANNEL" and chanid == 0 then return end --Only scan official custom channels (gen/trade)
+			if event == "CHAT_MSG_CHANNEL" and (chanid == 0 or type(chanid) ~= "number") then return end --Only scan official custom channels (gen/trade)
 			if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
 			local lowMsg = msg:lower() --lower all text
 			for i=1, #BADBOY_CCLEANER do --scan DB for matches
