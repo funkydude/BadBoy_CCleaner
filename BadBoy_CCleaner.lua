@@ -43,7 +43,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		}
 	end
 
-	local gsub, Ambiguate, prevLineId, result, modify, BADBOY_CCLEANER = gsub, Ambiguate, 0, nil, nil, BADBOY_CCLEANER
+	local gsub, prevLineId, result, modify, BADBOY_CCLEANER = gsub, 0, nil, nil, BADBOY_CCLEANER
 
 	table.sort(BADBOY_CCLEANER)
 	local text
@@ -69,12 +69,11 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		else
 			prevLineId, modify, result = lineId, nil, nil
 			if event == "CHAT_MSG_CHANNEL" and (chanid == 0 or type(chanid) ~= "number") then return end --Only scan official custom channels (gen/trade)
-			local trimmedPlayer = Ambiguate(player, "none") -- Unit events don't support PlayerName-MyServer
-			if not CanComplainChat(trimmedPlayer) or UnitIsInMyGuild(trimmedPlayer) then return end --Don't filter ourself/friends/guild
+			if not CanComplainChat(player) or UnitIsInMyGuild(player) then return end --Don't filter ourself/friends/guild
 			local lowMsg = msg:lower() --lower all text
 			for i=1, #BADBOY_CCLEANER do --scan DB for matches
 				if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
-					if BadBoyLog then BadBoyLog("CCleaner", event, trimmedPlayer, msg) end
+					if BadBoyLog then BadBoyLog("CCleaner", event, player, msg) end
 					result = true
 					return true --found a trigger, filter
 				end
