@@ -59,7 +59,6 @@ do
 	ccleanerInput:SetScript("OnTextChanged", function(frame, changed)
 		if changed then
 			local msg = (frame:GetText()):lower()
-			msg = (msg):gsub("[%(%)%.%%%+%-%*%?%[%^%$%]]", "")
 			frame:SetText(msg)
 		end
 	end)
@@ -74,8 +73,7 @@ do
 		ccleanerInput:ClearFocus()
 		local t = ccleanerInput:GetText()
 		if t == "" or t:find("^ *$") then ccleanerInput:SetText("") return end
-		t = (t):lower()
-		t = (t):gsub("[%(%)%.%%%+%-%*%?%[%^%$%]]", "")
+		t = t:lower()
 		local found
 		for i=1, #BADBOY_CCLEANER do
 			if BADBOY_CCLEANER[i] == t then found = i end
