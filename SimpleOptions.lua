@@ -30,13 +30,13 @@ do
 	elseif L == "zhTW" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "zhCN" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		noIconsMsgText:SetText("从公共频道移除团队图标")
 	elseif L == "esES" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "esMX" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "ruRU" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		noIconsMsgText:SetText("Убирать из чата рейдовые метки (квадрат, череп и тому подобные)")
 	elseif L == "koKR" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "ptBR" then
