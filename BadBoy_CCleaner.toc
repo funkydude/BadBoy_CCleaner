@@ -1,4 +1,4 @@
-## Interface: 60100
+## Interface: 60200
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Enlève toutes les saloperies de votre fenêtre de discussion.

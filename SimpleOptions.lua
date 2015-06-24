@@ -30,7 +30,7 @@ do
 	elseif L == "zhTW" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "zhCN" then
-		noIconsMsgText:SetText("从公共频道移除团队图标")
+		noIconsMsgText:SetText("從公共頻道中移除團隊標記圖示")
 	elseif L == "esES" then
 		noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "esMX" then
