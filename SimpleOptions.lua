@@ -51,7 +51,7 @@ do
 	ccleanerInput:EnableMouse(true)
 	ccleanerInput:SetWidth(250)
 	ccleanerInput:SetHeight(20)
-	ccleanerInput:SetMaxLetters(30)
+	ccleanerInput:SetMaxLetters(100)
 	ccleanerInput:SetScript("OnEscapePressed", function(frame)
 		frame:SetText("")
 		frame:ClearFocus()
