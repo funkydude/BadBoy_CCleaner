@@ -1,6 +1,6 @@
 
 do
-	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@") --wowace magic, replaced with tag version
+	BadBoyCCleanerConfigTitle:SetText("BadBoy_CCleaner @project-version@") --packager magic, replaced with tag version
 
 	local ccleanerNoIcons = CreateFrame("CheckButton", nil, BadBoyConfig, "OptionsBaseCheckButtonTemplate")
 	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -135)
@@ -28,21 +28,21 @@ do
 	elseif L == "deDE" then
 		noIconsMsgText:SetText("Entferne Schlachtzugssymbole im Öffentlichen Chat")
 	elseif L == "zhTW" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		--noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "zhCN" then
 		noIconsMsgText:SetText("從公共頻道中移除團隊標記圖示")
 	elseif L == "esES" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		--noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "esMX" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		--noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "ruRU" then
 		noIconsMsgText:SetText("Убирать из чата рейдовые метки (квадрат, череп и тому подобные)")
 	elseif L == "koKR" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		--noIconsMsgText:SetText("Remove raid icons from public chat")
 	elseif L == "ptBR" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		noIconsMsgText:SetText("Remover ícones de raid do chat público")
 	elseif L == "itIT" then
-		noIconsMsgText:SetText("Remove raid icons from public chat")
+		--noIconsMsgText:SetText("Remove raid icons from public chat")
 	end
 
 	local ccleanerInput = CreateFrame("EditBox", nil, BadBoyConfig, "InputBoxTemplate")

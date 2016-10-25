@@ -4,7 +4,7 @@
 ## Notes: Filter crap from your chat.
 ## Notes-frFR: Enlève toutes les saloperies de votre fenêtre de discussion.
 ## Notes-deDE: Unsinniges aus Deinem Chat herausfiltern.
-## Notes-ptBR: Filter crap from your chat.
+## Notes-ptBR: Filtrar lixo do seu chat.
 ## Notes-ruRU: Очищает чат от "мусора"
 ## Notes-zhCN: 过滤聊天窗口的广告
 ## Notes-zhTW: 過濾聊天窗口的廢話....
