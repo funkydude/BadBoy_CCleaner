@@ -9,8 +9,8 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 		}
 	end
 
-	local Ambiguate, gsub, prevLineId, result, BADBOY_CCLEANER = Ambiguate, gsub, 0, nil, BADBOY_CCLEANER
-	local CanComplainChat, UnitInRaid, UnitInParty, SocialQueueUtil_GetNameAndColor = CanComplainChat, UnitInRaid, UnitInParty, SocialQueueUtil_GetNameAndColor
+	local Ambiguate, prevLineId, result, BADBOY_CCLEANER = Ambiguate, 0, nil, BADBOY_CCLEANER
+	local BadBoyIsFriendly = BadBoyIsFriendly
 
 	table.sort(BADBOY_CCLEANER)
 	local text
@@ -31,8 +31,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			prevLineId, result = lineId, nil
 			local trimmedPlayer = Ambiguate(player, "none")
 			if event == "CHAT_MSG_CHANNEL" and (chanid == 0 or type(chanid) ~= "number") then return end --Only scan official custom channels (gen/trade)
-			local _, _, relationship = SocialQueueUtil_GetNameAndColor(guid)
-			if not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer) or relationship or flag == "GM" or flag == "DEV" then return end
+			if BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
 			local lowMsg = msg:lower() --lower all text
 			for i=1, #BADBOY_CCLEANER do --scan DB for matches
 				if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
