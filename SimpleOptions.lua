@@ -4,19 +4,7 @@ do
 
 	local ccleanerNoIcons = CreateFrame("CheckButton", nil, BadBoyConfig, "OptionsBaseCheckButtonTemplate")
 	ccleanerNoIcons:SetPoint("TOPLEFT", BadBoyConfigPopupButton, "BOTTOMLEFT", 0, -135)
-	ccleanerNoIcons:SetScript("OnClick", function(frame)
-		local tick = frame:GetChecked()
-		if tick then
-			PlaySound("igMainMenuOptionCheckBoxOn")
-			BADBOY_NOICONS = true
-		else
-			PlaySound("igMainMenuOptionCheckBoxOff")
-			BADBOY_NOICONS = nil
-		end
-	end)
-	ccleanerNoIcons:SetScript("OnShow", function(frame)
-		frame:SetChecked(BADBOY_NOICONS)
-	end)
+	ccleanerNoIcons:Disable()
 
 	local noIconsMsgText = ccleanerNoIcons:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
 	noIconsMsgText:SetPoint("LEFT", ccleanerNoIcons, "RIGHT", 0, 1)
