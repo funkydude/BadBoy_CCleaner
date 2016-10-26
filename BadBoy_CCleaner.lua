@@ -24,7 +24,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	BadBoyCCleanerEditBox:SetText(text or "")
 
 	--main filtering function
-	local filter = function(_,event,msg,player,lang,chan,tar,flag,chanid,chanNum,chanName,u,lineId,...)
+	local filter = function(_,event,msg,player,_,_,_,flag,chanid,_,_,_,lineId,guid)
 		if lineId == prevLineId then
 			if result then
 				return true
@@ -36,7 +36,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 			local trimmedPlayer = Ambiguate(player, "none")
 			if event == "CHAT_MSG_CHANNEL" and (chanid == 0 or type(chanid) ~= "number") then return end --Only scan official custom channels (gen/trade)
 			local _, _, relationship = SocialQueueUtil_GetNameAndColor(guid)
-			if not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer) or relationship then return end --Don't filter ourself/friends/guild
+			if not CanComplainChat(lineId) or UnitInRaid(trimmedPlayer) or UnitInParty(trimmedPlayer) or relationship or flag == "GM" or flag == "DEV" then return end
 			local lowMsg = msg:lower() --lower all text
 			for i=1, #BADBOY_CCLEANER do --scan DB for matches
 				if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
