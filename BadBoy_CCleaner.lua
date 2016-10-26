@@ -26,11 +26,7 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 	--main filtering function
 	local filter = function(_,event,msg,player,_,_,_,flag,chanid,_,_,_,lineId,guid)
 		if lineId == prevLineId then
-			if result then
-				return true
-			else
-				return
-			end
+			return result
 		else
 			prevLineId, result = lineId, nil
 			local trimmedPlayer = Ambiguate(player, "none")
