@@ -14,7 +14,7 @@
 ## Notes-itIT: Filter crap from your chat.
 ## Author: Funkydude
 ## Dependencies: BadBoy
-## SavedVariables: BADBOY_CCLEANER, BADBOY_NOICONS
+## SavedVariables: BADBOY_CCLEANER
 ## X-Category: Chat/Communication
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: badboy_ccleaner
