@@ -42,7 +42,6 @@ do
 	ccleanerEditBox:SetHeight(250)
 	ccleanerEditBox:Show()
 	ccleanerEditBox:SetScript("OnShow", function(frame)
-		print"SHOW"
 		if type(BADBOY_CCLEANER) == "table" then
 			table.sort(BADBOY_CCLEANER)
 			local text
