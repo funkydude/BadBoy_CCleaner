@@ -1,6 +1,7 @@
 
-BadBoyConfig:RegisterEvent("ADDON_LOADED")
-BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
+local f = CreateFrame("Frame")
+f:RegisterEvent("ADDON_LOADED")
+f:SetScript("OnEvent", function(frame, _, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
 	if type(BADBOY_CCLEANER) ~= "table" then
 		BADBOY_CCLEANER = {
@@ -11,17 +12,6 @@ BadBoyConfig:SetScript("OnEvent", function(frame, evt, addon)
 
 	local Ambiguate, prevLineId, result, BADBOY_CCLEANER = Ambiguate, 0, nil, BADBOY_CCLEANER
 	local BadBoyIsFriendly = BadBoyIsFriendly
-
-	table.sort(BADBOY_CCLEANER)
-	local text
-	for i=1, #BADBOY_CCLEANER do
-		if not text then
-			text = BADBOY_CCLEANER[i]
-		else
-			text = text.."\n"..BADBOY_CCLEANER[i]
-		end
-	end
-	BadBoyCCleanerEditBox:SetText(text or "")
 
 	--main filtering function
 	local filter = function(_,event,msg,player,_,_,_,flag,chanid,_,_,_,lineId,guid)
