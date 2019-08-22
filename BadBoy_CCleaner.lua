@@ -24,10 +24,19 @@ f:SetScript("OnEvent", function(frame, _, addon)
 			if BadBoyIsFriendly(trimmedPlayer, flag, lineId, guid) then return end
 			local lowMsg = msg:lower() --lower all text
 			for i=1, #BADBOY_CCLEANER do --scan DB for matches
-				if lowMsg:find(BADBOY_CCLEANER[i], nil, true) then
+				result=true
+				for j in string.gmatch(BADBOY_CCLEANER[i], "[^;]+") do -- support filtering for multiple words concatenated by ; e.g.: anal;rape
+				--if rape AND anal  appear in the same message then filter it out
+					if not lowMsg:find(j, nil, true) then
+						--print(j, "not found msg:", lowMsg)
+						result=false
+					end
+				end
+				
+				if result then
+					--print("filtered msg: ", lowMsg)
 					if BadBoyLog then BadBoyLog("CCleaner", event, trimmedPlayer, msg) end
-					result = true
-					return true --found a trigger, filter
+					return true
 				end
 			end
 		end
