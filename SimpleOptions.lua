@@ -85,7 +85,7 @@ do
 		ccleanerInput:SetText("")
 	end)
 
-	local ccleanerBackdrop = CreateFrame("Frame", nil, BadBoyConfig)
+	local ccleanerBackdrop = CreateFrame("Frame", nil, BadBoyConfig, "BackdropTemplate")
 	ccleanerBackdrop:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
 		edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
 		tile = true, tileSize = 16, edgeSize = 16,
