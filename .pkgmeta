@@ -1,6 +1,2 @@
 package-as: BadBoy_CCleaner
 wowi-archive-previous: no
-
-ignore:
-  - .travis.yml
-  - README.md
