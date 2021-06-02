@@ -12,5 +12,10 @@ globals = {
 	-- Options
 	"BadBoyConfig",
 	"BadBoyCCleanerConfigTitle",
+	"ChatFontNormal",
 	"CreateFrame",
+
+	-- Text String
+	"ADD",
+	"REMOVE",
 }

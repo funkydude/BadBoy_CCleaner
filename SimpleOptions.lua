@@ -68,9 +68,9 @@ do
 			if BADBOY_CCLEANER[i] == t then found = i end
 		end
 		if found then
-			tremove(BADBOY_CCLEANER, found)
+			table.remove(BADBOY_CCLEANER, found)
 		else
-			tinsert(BADBOY_CCLEANER, t)
+			table.insert(BADBOY_CCLEANER, t)
 		end
 		table.sort(BADBOY_CCLEANER)
 		local text
