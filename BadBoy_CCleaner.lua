@@ -4,10 +4,7 @@ f:RegisterEvent("ADDON_LOADED")
 f:SetScript("OnEvent", function(frame, _, addon)
 	if addon ~= "BadBoy_CCleaner" then return end
 	if type(BADBOY_CCLEANER) ~= "table" then
-		BADBOY_CCLEANER = {
-			"anal",
-			"rape",
-		}
+		BADBOY_CCLEANER = {}
 	end
 
 	local Ambiguate, prevLineId, result, BADBOY_CCLEANER = Ambiguate, 0, nil, BADBOY_CCLEANER
