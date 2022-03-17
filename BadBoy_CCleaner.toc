@@ -1,6 +1,4 @@
 ## Interface: 90100
-## Interface-Classic: 11307
-## Interface-BCC: 20501
 ## Version: @project-version@
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
