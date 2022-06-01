@@ -1,4 +1,4 @@
-## Interface: 90200
+## Interface: 90205
 ## Version: @project-version@
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
