@@ -19,6 +19,7 @@
 ## X-License: All Rights Reserved: You are free to fork and modify on GitHub, please ask us about anything else.
 ## X-Curse-Project-ID: 19305
 ## X-WoWI-ID: 13526
+## X-Wago-ID: RXKqooNy
 
 SimpleOptions.lua
 BadBoy_CCleaner.lua
