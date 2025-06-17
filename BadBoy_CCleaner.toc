@@ -1,4 +1,4 @@
-## Interface: 11506, 11505, 20504, 30403, 40402, 40401, 110005, 110007, 110100
+## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110100
 ## Version: @project-version@
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
@@ -12,7 +12,7 @@
 ## Notes-esES: Filter crap from your chat.
 ## Notes-esMX: Filter crap from your chat.
 ## Notes-itIT: Filter crap from your chat.
-## Author: Funkydude
+## Author: Funkeh
 ## Dependencies: BadBoy
 ## SavedVariables: BADBOY_CCLEANER
 ## X-Category: Chat/Communication
