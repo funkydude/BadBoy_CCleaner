@@ -1,4 +1,4 @@
-## Interface: 11506, 11507, 20504, 30404, 40402, 40401, 50500, 110105, 110107, 110200
+## Interface: 11508, 11507, 20505, 30405, 38000, 40402, 50503, 50502, 120001, 110207, 120000
 ## Version: @project-version@
 ## Title: BadBoy_CCleaner
 ## Notes: Filter crap from your chat.
