@@ -6,4 +6,5 @@
 * Removes chat lines when a defined word is found.
 
 ## Download
-https://www.curseforge.com/wow/addons/badboy_ccleaner
+* <https://www.curseforge.com/wow/addons/badboy_ccleaner>
+* <https://addons.wago.io/addons/badboy-ccleaner>
