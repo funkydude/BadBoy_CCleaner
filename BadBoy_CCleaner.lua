@@ -9,9 +9,11 @@ f:SetScript("OnEvent", function(frame, _, addon)
 
 	local Ambiguate, prevLineId, result, BADBOY_CCLEANER = Ambiguate, 0, nil, BADBOY_CCLEANER
 	local BadBoyIsFriendly = BadBoyIsFriendly
+	local issecretvalue = issecretvalue or function() return false end
 
 	--main filtering function
 	local filter = function(_,event,msg,player,_,_,_,flag,chanid,_,_,_,lineId,guid)
+		if issecretvalue(msg) then return end
 		if lineId == prevLineId then
 			return result
 		else
